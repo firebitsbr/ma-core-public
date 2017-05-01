@@ -9,8 +9,6 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.jazdw.rql.parser.ASTNode;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,10 +19,12 @@ import com.infiniteautomation.mango.db.query.pojo.RQLToObjectListQuery;
 import com.serotonin.m2m2.web.mvc.rest.v1.message.RestProcessResult;
 import com.serotonin.m2m2.web.mvc.rest.v1.model.DemoModel;
 import com.serotonin.m2m2.web.mvc.rest.v1.model.DemoModel.Demo;
-import com.wordnik.swagger.annotations.ApiOperation;
-import com.wordnik.swagger.annotations.ApiParam;
-import com.wordnik.swagger.annotations.ApiResponse;
-import com.wordnik.swagger.annotations.ApiResponses;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+import net.jazdw.rql.parser.ASTNode;
 
 /**
  * @author Terry Packer

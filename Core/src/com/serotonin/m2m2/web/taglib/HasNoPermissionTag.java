@@ -4,7 +4,7 @@ import java.util.Set;
 
 import javax.servlet.jsp.jstl.core.ConditionalTagSupport;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.serotonin.m2m2.db.dao.SystemSettingsDao;
 import com.serotonin.m2m2.vo.User;

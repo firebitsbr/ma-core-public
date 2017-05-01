@@ -4,6 +4,7 @@
  */
 package com.serotonin.m2m2.web.mvc.spring;
 
+import java.util.Properties;
 import java.util.Set;
 
 import javax.servlet.ServletContainerInitializer;
@@ -11,6 +12,7 @@ import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.security.web.session.HttpSessionEventPublisher;
 import org.springframework.web.context.ContextLoaderListener;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
@@ -66,7 +68,13 @@ public class MangoWebApplicationInitializer implements ServletContainerInitializ
         ServletRegistration.Dynamic dispatcher =
                 context.addServlet("springDispatcher", new DispatcherServlet(dispatcherContext));
         dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("*.htm", "*.shtm", "/rest/*", "/api-docs/*");
+        dispatcher.addMapping(
+        		"*.htm",
+        		"*.shtm",
+        		"/rest/*",
+        		"/swagger-resources/configuration/security",
+        		"/swagger-resources/configuration/ui",
+        		"/swagger-resources/*");
         
         //Setup the Session Listener to Help the MangoSessionRegistry know when users login/out
         context.addListener(HttpSessionEventPublisher.class);

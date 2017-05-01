@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 
 import javax.script.ScriptException;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import com.serotonin.json.JsonException;
 import com.serotonin.json.JsonReader;

@@ -23,7 +23,7 @@ public class Upgrade17 extends DBUpgrade {
         //not using data type id to deserialize, so we don't need a legacy row mapper here
         List<DataPointVO> allPoints = DataPointDao.instance.getAll(); 
         for(DataPointVO dpvo : allPoints)
-        	DataPointDao.instance.save(dpvo); //save all of them so that the data type ID gets written back out
+        	DataPointDao.instance.updateDataPointShallow(dpvo); //save all of them so that the data type ID gets written back out
         
         scripts.clear();
         scripts.put(DatabaseProxy.DatabaseType.DERBY.name(), alterColumn);
